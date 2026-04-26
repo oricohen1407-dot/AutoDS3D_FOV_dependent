@@ -1,0 +1,28 @@
+# 1. The 'Secret Sauce' for GPU support on both OSs
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# 2. Core Machine Learning & Data Science
+torch
+torchvision
+torchaudio
+numpy
+scipy
+pandas
+scikit-learn
+scikit-image
+
+# 3. Visualization & UI (The 'Tk' wrapper and Gradio)
+matplotlib
+gradio
+gradio-client
+
+# 4. Image/File Handling (Mapping to your specific imports)
+pillow
+imageio
+tifffile
+h5py
+huggingface_hub
+
+# 5. Utilities
+tqdm
+pyyaml
