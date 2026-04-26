@@ -285,9 +285,12 @@ class TorchTrainer(Trainer):
     def train_batch(self, batch) -> BatchResult:
         X, y = batch  # unpacking
         if self.device:
+            #X = X.to(self.device, non_blocking=True)  # added on 15/01/2026 to increase running speed
+            #y = y.to(self.device, non_blocking=True)  # added on 15/01/2026 to increase running speed
             X = X.to(self.device)
             y = y.to(self.device)
 
+        #self.optimizer.zero_grad(set_to_none=True) # added on 15/01/2026 to increase running speed
         self.optimizer.zero_grad()
         output = self.model(X)
         loss = self.loss_fn(output, y)
